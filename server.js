@@ -6,7 +6,9 @@ const cors = require("cors")
 const morgan = require("morgan")
 const PORT = process.env.PORT || 3001
 const app = express()
+// Create project model for CRUD
 const projects = require("./projects.json")
+// Create developer model for CRUD
 const about = require("./about.json")
 // * Middleware
 ////////////////// *
@@ -21,12 +23,12 @@ app.get("/", (req, res) => {
         response: "/about or /projects for content"
     })
 })
-
+// router for CRUD on project model
 app.get("/about", (req, res) => {
     // send about via JSON
     res.json(about)
 })
-
+// router for CRUD on project model
 app.get("/projects", (req, res) => {
     // send project via JSON
     res.json(projects)
