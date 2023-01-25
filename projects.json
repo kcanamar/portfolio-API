@@ -1,0 +1,26 @@
+[
+    {
+        "image": "https://raw.githubusercontent.com/kcanamar/cannanote/main/public/screenshots/feed.png",
+        "name": "CannaNote",
+        "git": "https://github.com/kcanamar/cannanote",
+        "live": "https://karc-cannanote.herokuapp.com/"
+    },
+    {
+        "image": "https://github.com/kcanamar/capstone-ga/raw/main/public/images/_landingss.png",
+        "name": "Janus",
+        "git": "https://github.com/kcanamar/capstone-ga",
+        "live": "https://capstone-ga.vercel.app/"
+    },
+    {
+        "image": "https://github.com/SunghunP/elevar_crm/blob/main/readme-images/landingpage.png?raw=true",
+        "name": "Elevar",
+        "git": "https://github.com/SunghunP/elevar_crm",
+        "live": "https://elevarcrm.herokuapp.com/"
+    },
+    {
+        "image": "https://raw.githubusercontent.com/Isyates/pwnterest-project3-frontend/main/public/Main.png",
+        "name": "Pwntrest",
+        "git": "https://github.com/Isyates/pwnterest-project3-frontend",
+        "live": "https://pwnterest.netlify.app/"
+    }
+]
