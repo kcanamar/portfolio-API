@@ -20,16 +20,16 @@ app.use(cors())
 app.get("/", (req, res) => {
     // send json reponse
     res.json({
-        response: "/about or /projects for content"
+        response: "/api/about or /api/projects for content"
     })
 })
 // router for CRUD on project model
-app.get("/about", (req, res) => {
+app.get("/api/about", (req, res) => {
     // send about via JSON
     res.json(about)
 })
 // router for CRUD on project model
-app.get("/projects", (req, res) => {
+app.get("/api/projects", (req, res) => {
     // send project via JSON
     res.json(projects)
 })
