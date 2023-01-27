@@ -14,5 +14,44 @@
 
 | Endpoint | Method | Response | Other |
 | -------- | ------ | -------- | ----- |
+| / | GET | /api/about or /api/projects for content | |
 | /api/projects | GET | JSON of all projects | |
 | /api/about | GET | JSON of socials, contact, brand statement | |
+
+## ERD 
+
+```mermaid
+%%{ init: { 
+	'theme': 'base', 
+	'themeVariables': { 
+		'primaryColor': '#BBB6A5', 
+		'primaryTextColor': '#2A2F33', 
+		'primaryBorderColor': '#8C9491', 
+		'lineColor': '#8C8C9C', 
+		'secondaryColor': '#8C9491', 
+		'tertiaryColor': '#fff' 
+		} 
+	} 
+}%%
+erDiagram
+    ABOUT ||--|{ PROJECT : has
+    ABOUT {
+        string name
+        string email
+        string linked
+        string tweet
+        string git
+        string blog
+        string bio
+        number age
+        array project_ref
+        array tech_strings
+        array portfolios
+    }
+    PROJECT {
+        string image
+        string name
+        string live
+        string git
+    }
+```
