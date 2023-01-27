@@ -36,22 +36,6 @@ const About = mongoose.model("About", aboutSchema)
 const Project = mongoose.model("Project", projectSchema)
 
 ///////////////////////
-// * Custom Methods
-///////////////////////
-
-About.associate = async (aboutid, projectid) => {
-    // get the targeted about
-    const about = await About.findById(aboutid)
-    // get the targeted project
-    const project = await Project.findById(projectid)
-    // access the found about's projects array, and push the found project
-    about.projects.push(project)
-    // call the .save method to save changes
-    about.save()
-    // show the changes made
-    return { about , project }
-}
-///////////////////////
 // * Export
 ///////////////////////
 module.exports = { About, Project }

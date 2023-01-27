@@ -14,6 +14,7 @@
 
 | Endpoint | Method | Response | Other |
 | -------- | ------ | -------- | ----- |
+| / | GET | /api/about or /api/projects for content | |
 | /api/projects | GET | JSON of all projects | |
 | /api/about | GET | JSON of socials, contact, brand statement | |
 
@@ -34,28 +35,23 @@
 }%%
 erDiagram
     ABOUT ||--|{ PROJECT : has
-    ABOUT ||--|{ TECH : knows
-    PROJECT }|--|{ TECH : demonstrates
     ABOUT {
         string name
         string email
         string linked
-        string twitter
+        string tweet
         string git
-        string git
+        string blog
         string bio
-        array project
-        array tech
+        number age
+        array project_ref
+        array tech_strings
+        array portfolios
     }
     PROJECT {
         string image
         string name
         string live
         string git
-        array tech
-    }
-    TECH {
-	    string name
-	    string docs
     }
 ```
