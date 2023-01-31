@@ -46,9 +46,21 @@ app.get("/about", async (req, res) => {
 app.post("/about", async (req, res) => {
     res.json( await About.create(req.body))
 })
-// todo PUT about
-// todo DELETE about
 
+app.put("/about/:id", async (req, res) => {
+    // find and update about 
+    await About.findByIdAndUpdate(req.params.id, req.body)
+    res.json(await About.findById(req.params.id))
+})
+
+app.delete("/about/:id", async (req, res) => {
+    await About.findByIdAndDelete(req.params.id)
+    res.json(await About.find({}).populate("projects"))
+})
+
+app.get("/about/:id", async (req, res) => {
+    res.json(await About.findById(req.params.id).populate("projects"))
+})
 app.post("/project/:aboutid", async (req, res) => {
     // find aboutid
     const about = await About.findById(req.params.aboutid)

@@ -10,23 +10,22 @@ const projectSchema = new mongoose.Schema({
     image: String,
     name: String,
     live: String,
-    git: String
+    git: String,
+    stack: []
 })
 
 const aboutSchema = new mongoose.Schema({
     name: String,
     email: String,
     linked: String,
-    tweet: String,
     git: String,
+    twitter: String,
     blog: String,
     bio: String,
     age: Number,
     projects: [
         {type: mongoose.Types.ObjectId, ref: "Project"}
     ],
-    tech: [],
-    portfolios: []
 })
 
 //////////////////////
