@@ -81,12 +81,10 @@ app.get("/projects", async (req, res) => {
 
 // todo PUT project
 // todo DELETE project
-// todo GET tech
-// todo PUT tech
-// todo DELETE tech
-// todo GET portfolios
-// todo PUT portfolios
-// todo DELETE portfolio
+app.get("/project/:projectid", async (req, res) => {
+    res.json(await Project.findById(req.params.projectid))
+})
+
 
 // * Server Listener
 ////////////////// *
