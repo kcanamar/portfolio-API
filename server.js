@@ -73,7 +73,11 @@ app.post("/project/:aboutid", async (req, res) => {
     // confirm
     res.json(about)
 })
-// todo GET projects
+
+app.get("/projects", async (req, res) => {
+    res.json(await Project.find({}))
+})
+
 
 // todo PUT project
 // todo DELETE project
