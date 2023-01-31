@@ -83,7 +83,12 @@ app.put("/project/:projectid", async (req, res) => {
     await Project.findByIdAndUpdate(req.params.projectid, req.body)
     res.json(await Project.findById(req.params.projectid))
 })
-// todo DELETE project
+
+app.delete("/project/:projectid", async (req, res) => {
+    await Project.findByIdAndDelete(req.params.projectid)
+    res.json(await Project.find({}))
+})
+
 app.get("/project/:projectid", async (req, res) => {
     res.json(await Project.findById(req.params.projectid))
 })
