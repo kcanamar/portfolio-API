@@ -79,7 +79,10 @@ app.get("/projects", async (req, res) => {
 })
 
 
-// todo PUT project
+app.put("/project/:projectid", async (req, res) => {
+    await Project.findByIdAndUpdate(req.params.projectid, req.body)
+    res.json(await Project.findById(req.params.projectid))
+})
 // todo DELETE project
 app.get("/project/:projectid", async (req, res) => {
     res.json(await Project.findById(req.params.projectid))
