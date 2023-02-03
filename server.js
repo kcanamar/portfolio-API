@@ -24,7 +24,7 @@ app.use(express.json())
 app.get("/", (req, res) => {
     // send json reponse
     res.json({
-        response: "visit the github repo to learn how to use this api at"
+        response: "visit the github repo to learn how to use this api at https://github.com/kcanamar/portfolio-API"
     })
 })
 // * Authentication Router
