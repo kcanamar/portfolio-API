@@ -10,13 +10,14 @@
 | Repo | https://github.com/kcanamar/portfolio-API |
 | Technologies | Node.JS, Express.JS, JavaScript |
 
-## Route Table
+## Routing Table
 
 | Endpoint | Method | Response | Other |
 | -------- | ------ | -------- | ----- |
-| / | GET | /api/about or /api/projects for content | |
 | /api/projects | GET | JSON of all projects | |
-| /api/about | GET | JSON of socials, contact, brand statement | |
+| /api/projects/:id | GET | JSON of one project | |
+| /api/about | GET | JSON of all about versions | |
+| /api/about/:id | GET | JSON of one about version | |
 
 ## ERD 
 
