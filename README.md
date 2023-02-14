@@ -18,6 +18,8 @@
 | /api/projects/:id | GET | JSON of one project | |
 | /api/about | GET | JSON of all about versions | |
 | /api/about/:id | GET | JSON of one about version | |
+| /api/talents | GET | JSON of one all talents | |
+| /api/talents/:id | GET | JSON of one talent version | |
 
 ## ERD 
 
@@ -54,5 +56,11 @@ erDiagram
         string name
         string live
         string git
+    }
+    Talent {
+        string title
+        string desc
+        string link
+        string icon
     }
 ```
