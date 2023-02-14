@@ -9,6 +9,7 @@ const corsOptions = require("./config/cors")
 const authRouter = require("./routes/auth")
 const aboutRouter = require("./routes/about")
 const projectRouter = require("./routes/project")
+const talentRouter = require('./routes/talent')
 const PORT = process.env.PORT || 3001
 const app = express()
 
@@ -35,6 +36,7 @@ app.use("/auth", authRouter)
 ////////////////// *
 app.use("/api/about", aboutRouter)
 app.use("/api/projects", projectRouter)
+app.use("/api/talents", talentRouter)
 
 
 // * Server Listener
