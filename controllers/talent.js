@@ -1,7 +1,7 @@
 ////////////////////////
 // Setup - Import deps
 ////////////////////////
-const { About, Project } = require('../models/about.js');
+const Talent = require('../models/talent.js');
 ///////////////////////
 // Exports
 ///////////////////////
@@ -11,7 +11,7 @@ module.exports = {
     show,
     index,
     update,
-    delete: deleteProject,
+    delete: deleteTalent,
 };
 ///////////////////////
 // Declare Routes 
@@ -19,7 +19,7 @@ module.exports = {
 // Index
 async function index(req, res) {
     try {
-        res.json(await Project.find({}))
+        res.json(await Talent.find({}))
     } catch (err) {
         res.status(400).json({err})
     }
@@ -27,11 +27,7 @@ async function index(req, res) {
 // Create
 async function create(req, res) {
     try {
-        const about = await About.findById(req.params.id)
-        const project = await Project.create(req.body)
-        about.projects.push(project)
-        about.save()
-        res.json(about)
+        res.json( await Talent.create(req.body))
     } catch (err) {
         res.status(400).json({err})
     }
@@ -39,17 +35,17 @@ async function create(req, res) {
 // Update
 async function update(req, res) {
     try {
-        await Project.findByIdAndUpdate(req.params.id, req.body)
-        res.json(await Project.findById(req.params.id))
+        await Talent.findByIdAndUpdate(req.params.id, req.body)
+        res.json(await Talent.findById(req.params.id))
     } catch (err) {
         res.status(400).json({err})
     }
 }
 // Delete
-async function deleteProject(req, res) {
+async function deleteTalent(req, res) {
     try {
-        await Project.findByIdAndDelete(req.params.id)
-        res.json(await Project.find({}))
+        await Talent.findByIdAndDelete(req.params.id)
+        res.json(await Talent.find({}))
     } catch (err) {
         res.status(400).json({err})
     }
@@ -57,7 +53,8 @@ async function deleteProject(req, res) {
 // Show
 async function show(req, res) {
     try {
-        res.json(await Project.findById(req.params.id))
+        const data = await Talent.findById(req.params.id)
+        res.json(data)
     } catch (err) {
         res.status(400).json({err})
     }
